@@ -1,0 +1,29 @@
+name: 'CustomHookAction'
+description: 'This action allows for custom hooks for your own CI solutions. Instead of using the hugely verbose GitHub ones, you can just use this one!'
+inputs:
+  repourl:  #url of the repository
+    description: 'The url of the repository'
+    required: true
+    default: ''
+  reponame: #name of the repository
+    description: 'The name of the repository. Allows a single shell script to differentiate between multiple hooks'
+    required: true
+    default:  ''
+  targetip: #target IP
+    description: 'the ip of the target to deliver the hook to.'
+    required: true
+    default: ''
+  targetport: #target port
+    description: 'the port of the target onto which to deliver the hook to'
+    required: true
+    default: ''
+  message: #custom message
+    description: 'here you can supply your custom message if you want.'
+    required: false
+    default: ''
+outputs:
+  status: # outputs if the hook succesfully reached the supplied end
+    description: 'Tells you if the hook was succesfull or not'
+runs:
+  using: 'node12'
+  main: 'index.js'
