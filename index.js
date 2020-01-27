@@ -9,15 +9,17 @@ try {
     const targetport = core.getInput('targetport');
     const message = core.getInput('message');
 
+    var body;
+
     console.log("Setting up the following payload:");
     if (message) {
-        const body = {
+        body = {
             reponame: reponame,
             repourl: repourl,
             message: message,
         }
     } else {
-        const body = {
+        body = {
             reponame: reponame,
             repourl: repourl,
         }
