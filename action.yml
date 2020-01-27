@@ -1,5 +1,5 @@
 name: 'CustomHookAction'
-description: 'This action allows for less verbose hooks'
+description: 'This action allows for less verbose hooks!'
 inputs:
   repourl:  #url of the repository
     description: 'The url of the repository'
