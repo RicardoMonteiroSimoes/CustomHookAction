@@ -1,6 +1,6 @@
 name: 'CustomHookAction'
-icon: 'box'
-color: 'orange'
+Icon: 'box'
+Color: 'orange'
 description: 'This action allows for less verbose hooks!'
 inputs:
   repourl:  #url of the repository
