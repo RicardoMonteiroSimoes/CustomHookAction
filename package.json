@@ -19,6 +19,8 @@
   "homepage": "https://github.com/ByRicardoSimoes/CustomHookAction#readme",
   "dependencies": {
     "@actions/core": "^1.2.2",
-    "@actions/github": "^2.1.0"
+    "@actions/github": "^2.1.0",
+    "@octokit/core": "^2.2.0",
+    "node-fetch": "^2.6.0"
   }
 }
