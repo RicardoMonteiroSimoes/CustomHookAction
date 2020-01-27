@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ByRicardoSimoes/CustomHookAction/issues"
   },
-  "homepage": "https://github.com/ByRicardoSimoes/CustomHookAction#readme"
+  "homepage": "https://github.com/ByRicardoSimoes/CustomHookAction#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.2",
+    "@actions/github": "^2.1.0"
+  }
 }
