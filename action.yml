@@ -1,6 +1,4 @@
 name: 'CustomHookAction'
-Icon: 'box'
-Color: 'orange'
 description: 'This action allows for less verbose hooks!'
 inputs:
   repourl:  #url of the repository
@@ -29,3 +27,6 @@ outputs:
 runs:
   using: 'node12'
   main: 'index.js'
+branding:
+  icon: 'box'
+  color: 'orange'
