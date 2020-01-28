@@ -46,7 +46,7 @@ try {
     console.log("Done!") 
 
 } catch (error) {
-    core.setOutput("status", "failed " + err);
+    core.setOutput("status", "failed " + error);
     core.setOutput("booleanStatus", "false");
     core.setFailed(error.message);
 }
