@@ -31,7 +31,7 @@ try {
     console.log(targetip + ":" + targetport);
     console.log(JSON.stringify(body));
 
-    JsonSocket.sendSingleMessage(targetport, targetip, JSON.stringify(body), function(err) {
+    JsonSocket.sendSingleMessage(targetport, targetip, body, function(err) {
         if (err) {
             core.setOutput("status", "There was an error! " + err);
             throw err;
