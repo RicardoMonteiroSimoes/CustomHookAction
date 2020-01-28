@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const fetch = require('node-fetch');
+const JsonSocket = require('json-socket');
 
 try {
     // `who-to-greet` input defined in action metadata file
@@ -28,12 +28,13 @@ try {
     console.log(targetip + ":" + targetport);
     console.log(JSON.stringify(body));
 
-    fetch(targetip + ":" + targetport, {
-        method: "POST",
-        body: JSON.stringify(body)
+    JsonSocket.sendSingleMessage(targetport, targetip, JSON.stringify(body), function(err) {
+        if (err) {
+            throw err;
+        }
     });
 
-    console.log("Done! :)")
+    console.log("Done!")
 
 } catch (error) {
     core.setFailed(error.message);
