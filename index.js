@@ -27,8 +27,7 @@ try {
             repoUrl: repoUrl,
         }
     }
-
-    console.log(targetIp + ":" + targetPort);
+    
     console.log(JSON.stringify(body));
 
     var client = new net.Socket();
