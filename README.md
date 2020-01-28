@@ -65,8 +65,18 @@ jobs:
       run: echo  "Status of the first Hook was ${{ steps.FullHook.outputs.status }}"
 ```
 
-The following (partial) script is missing the message parameter.
-```
+
+The following script is missing the message parameter.
+```yml
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  CustomHookAction:
+    runs-on: ubuntu-latest
+    name: Tells your CI Solution something happened!
+    steps:
     - name: CustomHookAction with missing message parameter
       id: DenseHook
       uses: ByRicardoSimoes/CustomHookAction@1.0.0
@@ -79,9 +89,19 @@ The following (partial) script is missing the message parameter.
       run: echo  "Status of the second Hook was ${{ steps.DenseHook.outputs.status }}"
 ```
 
-The following (partial) script is the bare minimum you need to run the action. If you supply **less** than these 3 parameters,
+
+The following script is the bare minimum you need to run the action. If you supply **less** than these 3 parameters,
 the action will throw an error and **not** run.
-```
+```yml
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  CustomHookAction:
+    runs-on: ubuntu-latest
+    name: Tells your CI Solution something happened!
+    steps:
     - name: CustomHookAction with missing message and repourl parameter
       id: MinHook
       uses: ByRicardoSimoes/CustomHookAction@1.0.0
