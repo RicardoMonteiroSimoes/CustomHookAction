@@ -41,6 +41,7 @@ This is an example script. It offers 3 examples of usage of the script.
 To the end of the script there are several conditional echo requests that showcase how you can use the feedback of 
 the script to enact more actions.
 
+This first script shows triggers on a push to the master branch. It includes the description of the action using all parameters.
 ```yml
 on: 
   push:
@@ -62,6 +63,10 @@ jobs:
         message: 'ThisIsATestMessagePleaseIgnore'      
     - name: Status of the Hook
       run: echo  "Status of the first Hook was ${{ steps.FullHook.outputs.status }}"
+```
+
+The following (partial) script is missing the message parameter.
+```
     - name: CustomHookAction with missing message parameter
       id: DenseHook
       uses: ByRicardoSimoes/CustomHookAction@1.0.0
@@ -72,6 +77,11 @@ jobs:
         targetPort: ${{ secrets.TARGET_PORT }}
     - name: Status of the Hook
       run: echo  "Status of the second Hook was ${{ steps.DenseHook.outputs.status }}"
+```
+
+The following (partial) script is the bare minimum you need to run the action. If you supply **less** than these 3 parameters,
+the action will throw an error and **not** run.
+```
     - name: CustomHookAction with missing message and repourl parameter
       id: MinHook
       uses: ByRicardoSimoes/CustomHookAction@1.0.0
