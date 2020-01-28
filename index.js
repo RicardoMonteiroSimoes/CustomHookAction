@@ -37,13 +37,13 @@ try {
         client.write(JSON.stringify(body));
         client.destroy();
         core.setOutput("status", "successful");
-        core.setOutput("booleanstatus", "true");
+        core.setOutput("booleanstatus", true);
     });
 
     console.log("Done!") 
 
 } catch (error) {
     core.setOutput("status", "failed " + err);
-    core.setOutput("booleanstatus", "false");
+    core.setOutput("booleanstatus", false);
     core.setFailed(error.message);
 }
