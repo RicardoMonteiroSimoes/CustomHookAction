@@ -30,11 +30,16 @@ try {
 
     JsonSocket.sendSingleMessage(targetport, targetip, JSON.stringify(body), function(err) {
         if (err) {
+            core.setOutput("status", "There was an error! " + err);
             throw err;
+        } else {
+            core.setOutput("status", "delivered the packet succesfully!");
         }
     });
 
     console.log("Done!")
+
+    
 
 } catch (error) {
     core.setFailed(error.message);
