@@ -12,15 +12,18 @@ try {
     var body;
 
     console.log("Setting up the following payload:");
+    body = {
+        reponame: reponame,
+    }
     if (message) {
         body = {
-            reponame: reponame,
-            repourl: repourl,
+            ...body,
             message: message,
         }
-    } else {
+    } 
+    if (repourl) {
         body = {
-            reponame: reponame,
+            ...body,
             repourl: repourl,
         }
     }
