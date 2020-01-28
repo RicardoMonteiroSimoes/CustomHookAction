@@ -16,13 +16,15 @@ The hook submits a simple JSON-load to your endpoint. The payload might look lik
 The script consists of 5 parameters that allow you to set up the payload as you like. only 3 of those are required.
 
     - repoName *(required)*
-        - this variable is required as a minimum information for the target. You could use this to tell it, where the message came from. This way you can use one single listening port to launch multiple scripts for different repositories
+        - this variable is required as a minimum information for the target. You could use this to tell it, 
+        where the message came from. This way you can use one single listening port to launch multiple scripts for different repositories
     - targetIp *(required)*
         - Should be self explainatory. The target IP that will receive the payload
     - targetPort *(required)*
         - The port on the target that is listening for our payload
     - repoUrl *(optional)*
-        - The repoUrl can is optional. This might be usefull if you wan't to be able to change the url dynamically and supply it trough the payload
+        - The repoUrl can is optional. This might be usefull if you wan't to be able to change the url dynamically 
+        and supply it trough the payload
     - message *(optional)*
         - Use the message to supply additional information to the target. Maybe you want to tell it which branch was updated, or additional parameters? It's up to you!
 
@@ -36,7 +38,8 @@ It also offers 2 output parameters you can use!
 ## Example *.yml script
 
 This is an example script. It offers 3 examples of usage of the script.
-To the end of the script there are several conditional echo requests that showcase how you can use the feedback of the script to enact more actions.
+To the end of the script there are several conditional echo requests that showcase how you can use the feedback of 
+the script to enact more actions.
 
 ```yml
 on: 
