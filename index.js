@@ -11,6 +11,10 @@ try {
 
     var body;
 
+    if(!targetIp || !targetPort || !repoName){
+        throw ("Not all required parameters were supplied!");
+    }
+
     console.log("Setting up the following payload:");
     body = {
         repoName: repoName,
