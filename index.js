@@ -12,7 +12,7 @@ try {
     var body;
 
     if(!targetIp || !targetPort || !repoName){
-        throw ("Not all required parameters were supplied!");
+        throw new Error("Not all required parameters were supplied!");
     }
 
     console.log("Setting up the following payload:");
@@ -46,7 +46,7 @@ try {
     console.log("Done!") 
 
 } catch (error) {
-    core.setOutput("status", "failed " + error);
+    core.setOutput("status", "failed");
     core.setOutput("booleanStatus", "false");
     core.setFailed(error.message);
 }
