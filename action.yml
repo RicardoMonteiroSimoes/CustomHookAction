@@ -3,7 +3,7 @@ description: 'This action allows for less verbose hooks!'
 inputs:
   repourl:  #url of the repository
     description: 'The url of the repository'
-    required: true
+    required: false
     default: ''
   reponame: #name of the repository
     description: 'The name of the repository. Allows a single shell script to differentiate between multiple hooks'

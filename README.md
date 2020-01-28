@@ -9,7 +9,7 @@ The action offers 5 simple parameters for you to set.
 
 ### repourl
 
-This parameter is supposed to be the url of your repository. To allow freedom of choice, you can set it to anything.
+This parameter is supposed to be the url of your repository. To allow freedom of choice, you can set it to anything. This is not required anymore, as reponame should be enough to identify where it's coming from. You can, ofcourse, still use it.
 
 ### reponame
 
