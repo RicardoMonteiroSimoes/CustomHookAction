@@ -18,14 +18,14 @@ The script consists of 5 parameters that allow you to set up the payload as you 
    - repoName *(required)*
         - this variable is required as a minimum information for the target. You could use this to tell it, 
         where the message came from. This way you can use one single listening port to launch multiple scripts for different repositories
-    - targetIp *(required)*
+   - targetIp *(required)*
         - Should be self explainatory. The target IP that will receive the payload
-    - targetPort *(required)*
+   - targetPort *(required)*
         - The port on the target that is listening for our payload
-    - repoUrl *(optional)*
+   - repoUrl *(optional)*
         - The repoUrl can is optional. This might be usefull if you wan't to be able to change the url dynamically 
         and supply it trough the payload
-    - message *(optional)*
+   - message *(optional)*
         - Use the message to supply additional information to the target. Maybe you want to tell it which branch was updated, or additional parameters? It's up to you!
 
 It also offers 2 output parameters you can use!
