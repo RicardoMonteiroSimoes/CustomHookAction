@@ -36,7 +36,7 @@ try {
         console.log('Connected');
         client.write(JSON.stringify(body));
         client.destroy();
-        core.setOutput("status", "passed");
+        core.setOutput("status", "successful");
         core.setOutput("booleanStatus", true);
     });
 
