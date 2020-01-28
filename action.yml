@@ -24,6 +24,8 @@ inputs:
 outputs:
   status: # outputs if the hook succesfully reached the supplied end
     description: 'Tells you if the hook was succesfull or not'
+  booleanstatus: #boolean value of the statues
+    description: 'Use this if you want to make follow up scripts conditional'
 runs:
   using: 'node12'
   main: 'index.js'
