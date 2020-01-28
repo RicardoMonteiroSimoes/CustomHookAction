@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const JsonSocket = require('json-socket');
+const net = require('net');
 
 try {
     // `who-to-greet` input defined in action metadata file
@@ -31,18 +31,14 @@ try {
     console.log(targetip + ":" + targetport);
     console.log(JSON.stringify(body));
 
-    JsonSocket.sendSingleMessage(targetport, targetip, body, function(err) {
-        if (err) {
-            core.setOutput("status", "There was an error! " + err);
-            throw err;
-        } else {
-            core.setOutput("status", "delivered the packet succesfully!");
-        }
+    var client = new net.Socket();
+    client.connect(targetport, targetip, function() {
+        console.log('Connected');
+        client.write(JSON.stringify(body));
+        client.destroy();
     });
 
-    console.log("Done!")
-
-    
+    console.log("Done!") 
 
 } catch (error) {
     core.setFailed(error.message);
