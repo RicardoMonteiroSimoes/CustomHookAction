@@ -1,19 +1,19 @@
 name: 'CustomHookAction'
 description: 'This action allows for less verbose hooks!'
 inputs:
-  repourl:  #url of the repository
+  repoUrl:  #url of the repository
     description: 'The url of the repository'
     required: false
     default: ''
-  reponame: #name of the repository
+  repoName: #name of the repository
     description: 'The name of the repository. Allows a single shell script to differentiate between multiple hooks'
     required: true
     default:  ''
-  targetip: #target IP
+  targetIp: #target IP
     description: 'the ip of the target to deliver the hook to.'
     required: true
     default: ''
-  targetport: #target port
+  targetPort: #target port
     description: 'the port of the target onto which to deliver the hook to'
     required: true
     default: ''
@@ -24,7 +24,7 @@ inputs:
 outputs:
   status: # outputs if the hook succesfully reached the supplied end
     description: 'Tells you if the hook was succesfull or not'
-  booleanstatus: #boolean value of the statues
+  booleanStatus: #boolean value of the statues
     description: 'Use this if you want to make follow up scripts conditional'
 runs:
   using: 'node12'

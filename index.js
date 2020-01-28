@@ -3,17 +3,17 @@ const net = require('net');
 
 try {
     // `who-to-greet` input defined in action metadata file
-    const repourl = core.getInput('repourl');
-    const reponame = core.getInput('reponame');
-    const targetip = core.getInput('targetip');
-    const targetport = core.getInput('targetport');
+    const repoUrl = core.getInput('repoUrl');
+    const repoName = core.getInput('repoName');
+    const targetIp = core.getInput('targetIp');
+    const targetPort = core.getInput('targetPort');
     const message = core.getInput('message');
 
     var body;
 
     console.log("Setting up the following payload:");
     body = {
-        reponame: reponame,
+        repoName: repoName,
     }
     if (message) {
         body = {
@@ -21,29 +21,29 @@ try {
             message: message,
         }
     } 
-    if (repourl) {
+    if (repoUrl) {
         body = {
             ...body,
-            repourl: repourl,
+            repoUrl: repoUrl,
         }
     }
 
-    console.log(targetip + ":" + targetport);
+    console.log(targetIp + ":" + targetPort);
     console.log(JSON.stringify(body));
 
     var client = new net.Socket();
-    client.connect(targetport, targetip, function() {
+    client.connect(targetPort, targetIp, function() {
         console.log('Connected');
         client.write(JSON.stringify(body));
         client.destroy();
         core.setOutput("status", "successful");
-        core.setOutput("booleanstatus", true);
+        core.setOutput("booleanStatus", true);
     });
 
     console.log("Done!") 
 
 } catch (error) {
     core.setOutput("status", "failed " + err);
-    core.setOutput("booleanstatus", false);
+    core.setOutput("booleanStatus", false);
     core.setFailed(error.message);
 }
