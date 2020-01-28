@@ -15,7 +15,7 @@ The hook submits a simple JSON-load to your endpoint. The payload might look lik
 
 The script consists of 5 parameters that allow you to set up the payload as you like. only 3 of those are required.
 
-    - repoName *(required)*
+   - repoName *(required)*
         - this variable is required as a minimum information for the target. You could use this to tell it, 
         where the message came from. This way you can use one single listening port to launch multiple scripts for different repositories
     - targetIp *(required)*
@@ -30,9 +30,9 @@ The script consists of 5 parameters that allow you to set up the payload as you 
 
 It also offers 2 output parameters you can use!
 
-    - status
+   - status
         - status is a verbose output if the script was successful or not. It will either be `successful` or `failed`
-    - booleanStatus
+   - booleanStatus
         -  as the name suggests this is the same as `status`, except that it contains a boolean value `true` or `false`
 
 ## Example *.yml script
